@@ -32,7 +32,7 @@ router.post('/', async (req, res) => {
     res.send({success: true});
 });
 
-router.delete('/',async (req, res) => {
+router.delete('/:id',async (req, res) => {
     const id = req.params.id;
     const user = await deleteUser(id);
     if (user) {
