@@ -19,12 +19,12 @@ const getUser = (id) => {
 };
 
 const addUser = async (name) => {
-
     const hero = new User({ name: name, user_id: crypto.randomUUID() });
     return hero.save();
 };
 
 const deleteUser = (id) => {
+    console.log(id)
     return User.deleteOne({user_id: id});
 };
 

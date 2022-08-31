@@ -5,17 +5,19 @@ const cors = require('cors');
 const bodyParser = require('body-parser')
 const users = require("./users_router");
 
-// getting-started.js
-// const mongoose = require('mongoose');
-// main().catch(err => console.log(err));
-// async function main() {
-//     await mongoose.connect('mongodb://0.0.0.0:27017/test');
-// }
+const dotenv = require('dotenv');
+dotenv.config({path: './config.env'});
+
+const MONGODB_URI = process.env.MONGODB_URI;
+
 const mongoose = require('mongoose');
 main().catch(err => console.log(err));
 async function main() {
-    await mongoose.connect('mongodb+srv://LeBron23:HerokuTestApp@server-mongo-db.jm5k3pt.mongodb.net/testDB');
+    await mongoose.connect(MONGODB_URI
+        //`mongodb+srv://LeBron23:HerokuTestApp@server-mongo-db.jm5k3pt.mongodb.net/testDB`
+    );
 }
+
 
 app.use(cors());
 app.use(bodyParser.urlencoded({ extended: false }));
