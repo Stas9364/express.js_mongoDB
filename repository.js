@@ -5,7 +5,7 @@ const userSchema = new mongoose.Schema({
     name: String,
     user_id: String
 });
-const User = mongoose.model('MyUser', userSchema);
+const User = mongoose.model('Users', userSchema);
 
 const getUsers = (search) => {
     if (!search) {
