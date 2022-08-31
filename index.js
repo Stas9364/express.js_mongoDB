@@ -6,11 +6,11 @@ const bodyParser = require('body-parser')
 const users = require("./users_router");
 
 // getting-started.js
-// const mongoose = require('mongoose');
-// main().catch(err => console.log(err));
-// async function main() {
-//     await mongoose.connect('mongodb://0.0.0.0:27017/test');
-// }
+import mongoose from "mongoose";
+main().catch(err => console.log(err));
+async function main() {
+    await mongoose.connect('mongodb://0.0.0.0:27017/test');
+}
 
 app.use(cors());
 app.use(bodyParser.urlencoded({ extended: false }));
@@ -18,7 +18,7 @@ app.use(bodyParser.json());
 
 const port = process.env.PORT || 7542;
 
-//app.use('/users', users);
+app.use('/users', users);
 
 app.get('/',  (req, res) => {
     res.send('<h1>Main page</h1>');
