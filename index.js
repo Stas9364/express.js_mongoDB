@@ -5,6 +5,15 @@ const cors = require('cors');
 const bodyParser = require('body-parser')
 const users = require("./users_router");
 
+const dotenv = require('dotenv');
+dotenv.config({path: './config.env'});
+const MONGODB_URI = process.env.MONGODB_URI;
+const mongoose = require('mongoose');
+main().catch(err => console.log(err));
+async function main() {
+    await mongoose.connect(MONGODB_URI);
+}
+
 app.use(cors());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
