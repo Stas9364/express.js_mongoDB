@@ -16,7 +16,7 @@ app.use(cors());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
-const port = 7542;
+const port = process.env.PORT || 7542;
 
 //app.use('/users', users);
 
