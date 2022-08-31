@@ -8,6 +8,6 @@
     "uuid": "^8.3.2"
   },
   "scripts": {
-    "start": "SET PORT=7542 && nodemon index.js localhost 7542"
+    "start": "node index.js"
   }
 }
