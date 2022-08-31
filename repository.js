@@ -19,7 +19,8 @@ const getUser = (id) => {
 };
 
 const addUser = async (name) => {
-    const hero = new User({ name, user_id: crypto.randomUUID() });
+
+    const hero = new User({ name: name, user_id: crypto.randomUUID() });
     return hero.save();
 };
 
@@ -28,7 +29,7 @@ const deleteUser = (id) => {
 };
 
 const updateUser = (id, name) => {
-    return User.update({user_id: id}, {name});
+    return User.updateOne({user_id: id}, {name});
 };
 
 exports.getUsers = getUsers;
