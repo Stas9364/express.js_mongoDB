@@ -6,7 +6,7 @@ const bodyParser = require('body-parser')
 const users = require("./users_router");
 
 // getting-started.js
-import mongoose from "mongoose";
+const mongoose = require('mongoose');
 main().catch(err => console.log(err));
 async function main() {
     await mongoose.connect('mongodb://0.0.0.0:27017/test');
