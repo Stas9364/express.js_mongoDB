@@ -20,6 +20,10 @@ const port = process.env.PORT || 7542;
 
 //app.use('/users', users);
 
+app.get('/',  (req, res) => {
+    res.send('<h1>Main page</h1>');
+});
+
 app.get('/tasks',  (req, res) => {
     res.send('<h1>Tasks</h1>');
 });
